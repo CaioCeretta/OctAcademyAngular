@@ -1,0 +1,25 @@
+<!-- <h1 class="text-red">Skabada</h1> -->
+
+<!-- Here we are using class binding, so the text-red class is going to be applied when the condition is true -->
+
+<h1 [class.text-red]="bool">Skabada</h1>
+
+<!-- Now we are binding the style property, just like the class, we are binding the [style] to a property in our ts and
+conditionally  setting some style into it-->
+
+<h1 [style.color]="bool ? 'blue' : 'red'" >Style Binding</h1>
+
+<!--
+
+  Event binding, we can bind to any event that a tag has using () around the attr, such as hover, mouseover, mouseout,
+  click, and so on.
+
+
+-->
+
+<button (click)="buttonClick()" >Click Me</button>
+
+
+
+
+

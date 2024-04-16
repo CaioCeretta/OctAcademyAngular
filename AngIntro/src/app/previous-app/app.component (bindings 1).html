@@ -1,0 +1,28 @@
+<h1>Angular App</h1>
+
+<!-- Interpolation, whenever we have a double curly braces, we are creating a javascript scope, which where we can add
+javascript functions into it, in this case, the message property from our ts file-->
+<p>{{ message }}</p>
+
+
+<!-- Property Binding: -->
+
+
+<img src="{{imgUrl}}" />
+
+<!-- Or -->
+
+<img [src]="imgUrl" />
+
+<!--
+  In the first example, we are simply utilizing our imgUrl attribute from the ts file and utilizing it as the src
+
+  But in angular, we get a different and cleaner approach for this dynnamic value, here, in the second example
+  we are using the property binding, we wrap the src property with square brackets and remove the string interpolation
+  curly brackets, we only keep the quotation and the variable name. The syntax is more cleaner and when the angular
+  compiler, compiles this component, both the approaches are going to lead to that property binding.
+
+  Usually we use string interpolation to bind data inside of a tag like <p>{{variable}}</p>, and the property binding
+  approach is ofently used to bind a html property with a ts variable
+
+-->
