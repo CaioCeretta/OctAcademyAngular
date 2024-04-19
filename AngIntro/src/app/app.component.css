@@ -1,3 +1,17 @@
 .text-red {
   color: #FF0000
 }
+
+.main {
+  margin: 0 auto;
+  color: green;
+}
+
+.text-weight {
+  font-weight: 800;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}

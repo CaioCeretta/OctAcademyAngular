@@ -1,0 +1,25 @@
+<!--
+  Event Filtering
+
+  Currently, on the example below, it is loggin on every key that i type in, but i only want to call that function
+  when i press the enter key. First we have to capture which key we are pressing on the keyboard, for that, i'm going
+  to pass $event as an argument
+
+  If we just pass it like this, we are going to be able to see the event parameter on the click, but it will have all of
+  those other properties that we don't need.
+-->
+
+<input type="text"  (keyup.enter)="onKeyup(username.value)" #username>
+
+
+<input [(ngModel)]="userName" (keyup.enter)="onKeyup()">
+
+{{userName}}
+
+
+<!-- In the example above, we are utilizing the #username on the input, the #input holds a reference to the input element
+which allows us to access its value using .value in the onKeyUp method -->
+
+
+
+

@@ -7,27 +7,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class PostComponent {
 
+  title: string = ''
 
+  details: string = ''
 
-  messagePost: string = 'Message Post'
+  imageUrl: string = ''
 
-  title: string = 'List of Posts'
+  url: string = ''
 
-  postParentMessage: string = 'Message coming from the post parent'
-
-  childMessage: string = 'From Child Component'
-
-  emittedString: string = 'Emitted String'
-
-  outputChildMessage: string = 'Message from child component via output decorator'
-
-  @Input() fromParent: string;
-
-  @Output() messageEvent = new EventEmitter<string>()
-
-  sendMessage() {
-    this.messageEvent.emit(this.emittedString)
-  }
+  addBackground: boolean
 
 
 

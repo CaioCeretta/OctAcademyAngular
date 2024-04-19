@@ -1,0 +1,73 @@
+<!-- <p>{{postArray}}</p>
+
+<ul>
+  <li>{{postArray[0]}}</li>
+  <li>{{postArray[1]}}</li>
+  <li>{{postArray[2]}}</li>
+  <li>{{postArray[3]}}</li>
+  <li>{{postArray[4]}}</li>
+
+</ul> -->
+
+<p> Iterating array </p>
+
+<ul>
+  <li *ngFor="let post of postArray">{{post}}</li>
+</ul>
+
+<p> Iterating Object </p>
+
+<button (click)="addNew()">Add New Data</button>
+
+
+<div *ngIf="objArray.length > 0; else noData">
+<ul>
+  <li *ngFor="let postObj of objArray ; let i = index">
+    {{postObj.postTitle}}
+    <button (click)="onDelete(i)">Delete</button>
+
+  </li>
+</ul>
+</div>
+
+<!-- If we do it just like this we would have a problem, because when we are using a structural directive, if we use a div
+tag to show data conditionally using a template variable, such like that one, the condition wouldn't work
+
+we would need a ng-template, so we can load data to the browser using structural directives, so we would need to change to
+<ng-template #noData>
+  <p>There is no data to fetch</p>
+</ng-template>
+
+but the ng-templkate will only appear with a structural directive
+-->
+<ng-template #noData>
+  <p>There is no data to fetch</p>
+</ng-template>
+
+
+<!-- Here we are using the pipe, pipe is a feature that take a data as an input and transforms it into a desired output
+They are useful to formatting data, such as dates, numbers, or strings, before displaying them in the template. They
+allow you to write display-value transformations that we declare in our html
+
+In the example above i'm transforming the postObj into a json text
+-->
+
+<ul>
+  <li *ngFor="let postObj of objArray">{{postObj | json}}</li>
+</ul>
+
+
+<!-- ___________________________________________________________________________________________________________ -->
+
+<div>
+  <button (click)="onClick('step 1')">Step 1</button>
+  <button (click)="onClick('step 2')">Step 2</button>
+  <button (click)="onClick('step 3')">Step 3</button>
+</div>
+
+<div [ngSwitch]="stepForm">
+<div *ngSwitchCase="'step 1'">Step 1 Form</div>
+<div *ngSwitchCase="'step 2'">Step 2 Form</div>
+<div *ngSwitchCase="'step 3'">Step 3 Form</div>
+<div *ngSwitchDefault="'Something Else'">Something else</div>
+</div>

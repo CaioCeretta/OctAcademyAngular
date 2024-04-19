@@ -1,10 +1,34 @@
+<!-- <h1>Post Form</h1>
 
-<h1>{{title}}</h1>
+<form>
+  <input name="title" type="text" placeholder="Post title" [(ngModel)]="title">
 
-{{fromParent}}
+  <input name="details" type="text" placeholder="Post details" [(ngModel)]="details">
 
-<app-post-list [parentMessage]="postParentMessage"></app-post-list>
+  <input name="imageUrl" type="text" placeholder="Post Image URL" [(ngModel)]="imageUrl">
 
-<button (click)="sendMessage()">Output Message</button>
+  <input name="url"  type="text" placeholder="Post URL" [(ngModel)]="url">
 
-{{ childMessage }}
+  <div class="checkbox"><input type="checkbox" name="background" [(ngModel)]="addBackground"> Add Background</div>
+</form>
+
+<div class="data">
+  <p>{{title}}</p>
+  <p>{{details}}</p>
+  <p [ngStyle]="{ 'display': addBackground ? 'block' : 'none' }"><img [src]="imageUrl"></p>
+  <a [href]="url">{{url}}</a>
+
+</div>
+ -->
+
+
+<!-- <div>
+  <button (click)="onClick('step 1')">Step 1</button>
+  <button (click)="onClick('step 2')">Step 2</button>
+  <button (click)="onClick('step 3')">Step 3</button>
+</div>
+
+<div *ngIf="stepForm === 'step 1'">Step 1 Form</div>
+<div *ngIf="stepForm === 'step 2'">Step 2 Form</div>
+<div *ngIf="stepForm === 'step 3'">Step 3 Form</div>
+ -->

@@ -1,0 +1,10 @@
+
+<h1>{{title}}</h1>
+
+{{fromParent}}
+
+<app-post-list [parentMessage]="postParentMessage"></app-post-list>
+
+<button (click)="sendMessage()">Output Message</button>
+
+{{ childMessage }}

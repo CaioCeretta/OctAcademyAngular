@@ -1,0 +1,25 @@
+<!-- one-way and two-way data binding
+
+When we wrap  an attribute with a with [] we are property binding it, so on the '' becomes a ts expression. In this case
+we are binding to the textValue property of our ts file
+-->
+
+<!-- Recaping:
+
+    One way data binding
+
+  . {{ title }} string interpolation
+  . [src] property binding
+  . [class.text-red] class binding
+  . [style.backgroundColor] style binding
+
+  Two way data binding
+
+  [(ngModel)]="property" two way binding
+
+-->
+<input type="text" [value]='textValue' (keyup.enter)="onKeyUp()">
+
+<input type="text" [(ngModel)]="textValue" (keyup.enter)="onKeyUp()">
+
+{{textValue}}
