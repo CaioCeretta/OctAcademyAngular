@@ -24,9 +24,15 @@ A component in Angular is a type of directive that is typically used to create r
 
 Structural directives in Angular change the structure of the DOM by adding, removing, or manipulating elements. Examples include *ngIf, *ngFor, and *ngSwitch, which respectively conditionally include or exclude elements, iterate over lists, and switch between multiple views.
 
+like *ngIf, *ngFor
+
 3. Attribute Directive
 
 Attribute directives in Angular modify the appearance or behavior of an element, component, or another directive. They are used by applying them as attributes to elements in the HTML template. Examples include ngStyle and ngClass, which respectively allow you to dynamically set CSS styles and classes based on component data.
+
+Basically we can only change the appearance of a DOM element, not its structure
+
+like ngStyle and ngClass
 
 4. Custom Directive
 

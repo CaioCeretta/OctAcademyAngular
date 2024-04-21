@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { PostService } from '../Services/post.service';
 
 @Component({
   selector: 'app-post-list',
@@ -7,6 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class PostListComponent {
 
-  @Input() parentMessage: string
+  posts: any[] = []
+
+  constructor () {
+  }
 
 }

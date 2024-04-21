@@ -1,0 +1,61 @@
+<div class="container">
+
+  <h2 style="text-align: center;">User Details</h2>
+
+  <form (ngSubmit)="onSubmit()" class="form-container">
+
+    <div class="form-group">
+      <label for="name" class="form-label">Name</label><br>
+      <input type="text" name="name" [(ngModel)]="name" placeholder="name"><br>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label><br>
+      <input type="text" name="email" [(ngModel)]="email" placeholder="e-mail"><br>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label><br>
+      <textarea type="text" name="address" [(ngModel)]="address" placeholder="address"></textarea>
+    </div>
+
+    <button type="submit" class="">Save Data</button>
+
+  </form>
+
+  <div *ngIf="this.formData.length > 0; else noData">
+    <table class="form-data-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of formData; let index = index">
+          <td>{{index}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.address}}</td>
+          <td><button (click)="deleteRow(data)">Delete</button></td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+  </div>
+
+    <ng-template  #noData>
+      <h4 [ngStyle]="{
+        'text-align': 'center',
+        'margin': '1rem 0'
+      }">No data to show</h4>
+    </ng-template>
+
+</div>
+

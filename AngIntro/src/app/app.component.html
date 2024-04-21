@@ -1,33 +1,19 @@
-<h3>ngStyle Directive</h3>
-
-<h1 [style.color]="isActive ? 'red' : 'black'" [style.textTransform]="isActive ? 'uppercase' : 'lowercase' ">
-  NgStyle Directive First Way
-</h1>
-
-<!--                                     One better approach                                         -->
-
-<h1 [ngStyle]="{
-    'color': isActive ? 'red' : 'black',
-    'textTransform': isActive ? 'uppercase' : 'lowercase'
-  }">
-  NgStyle Cleaner Way
-</h1>
-
-
-<h3>ngClass Directive</h3>
-
-<h1 [class.main]="isActive" [class.text-weight]='isActive'>
-  ngClass Example Binding
-</h1>
-
-
-<!-- Better approach -->
-
-<h1
-  [ngClass]="{
-    'main': isActive,
-    'text-weight': isActive
-  }"
->
-  ngClass Example
-</h1>
+<div class="container mt-5">
+  <div class="form-area w-100">
+    <form>
+      <div class="form-group">
+        <label for="">Username</label>
+        <input type="text" placeholder="Full Name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" placeholder="Email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="">Address</label>
+        <textarea class="form-control" name="" placeholder="address" id="" cols="30" rows="10"></textarea>
+      </div>
+      <button type="submit" class="mx-auto d-block btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.form-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-container input {
+  padding: 10px;
+
+  margin: 10px 0;
+
+}
+.form-data-table {
+  margin: 2rem auto;
+
+}
+
+.form-data-table th {
+  width: 100px;
+}
+
+.form-data-table td {
+  color: #aaa;
+  font-weight: 300;
+
+}
