@@ -1,19 +1,34 @@
 <div class="container mt-5">
   <div class="form-area w-100">
-    <form>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
       <div class="form-group">
         <label for="">Username</label>
-        <input type="text" placeholder="Full Name" class="form-control">
+        <input type="text" placeholder="Full Name" name="name"
+        class="form-control" ngModel required #userName='ngModel'
+        (change)="getValue(userName)"
+        [ngClass]="{'is-invalid' : userName.touched && userName.invalid }"
+        minlength="6"
+        maxlength="10"
+        >
+
+        <div *ngIf="userName.touched && userName.errors?.required">
+          <div class="alert alert-danger mt-2">Username is required</div>
+        </div>
+        <div *ngIf="userName.touched && userName.errors?.minlength">
+          <div class="alert alert-danger mt-2">Username length must be at least 6</div>
+        </div>
+
+
       </div>
       <div class="form-group">
         <label for="">Email</label>
-        <input type="text" placeholder="Email" class="form-control">
+        <input type="text" placeholder="Email" name="email" ngModel required class="form-control">
       </div>
       <div class="form-group">
         <label for="">Address</label>
-        <textarea class="form-control" name="" placeholder="address" id="" cols="30" rows="10"></textarea>
+        <textarea class="form-control" name="address" placeholder="address" cols="30" rows="10" ngModel required></textarea>
       </div>
-      <button type="submit" class="mx-auto d-block btn btn-primary">Submit</button>
+      <button type="submit" class="mx-auto mt-2 d-block btn btn-primary">Submit</button>
     </form>
   </div>
 </div>
