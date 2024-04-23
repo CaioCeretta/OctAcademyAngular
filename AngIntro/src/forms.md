@@ -32,3 +32,10 @@ submitMethodName(form: NgForm) {
 
 2. Reactive Form
 
+While i'm template driven forms we utilize the angular directive ngForm, in the reactive we code it from scratch.
+
+first we need to import the ReactiveFormsModule from @angular/forms and add it into the imports, similar as the FormsModule
+
+So, because we are coding from scratch, on the ts files we need to import the FormGroup and FormControl from the @angular/forms
+
+in the code we are going to see the example

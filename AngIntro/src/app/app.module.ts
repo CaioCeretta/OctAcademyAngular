@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PostComponent } from './post/post.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { FormsModule } from '@angular/forms';
-import { FormComponent } from './form/form.component';
-import { AppendPipe } from './Pipes/append.pipes';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppendCliPipe } from './Pipes/append-cli.pipe';
+import { AppendPipe } from './Pipes/append.pipes';
 import { SummaryPipe } from './Pipes/summary.pipe';
 import { PostService } from './Services/post.service';
+import { AppComponent } from './app.component';
+import { FormComponent } from './form/form.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostComponent } from './post/post.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PostService } from './Services/post.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     PostService
