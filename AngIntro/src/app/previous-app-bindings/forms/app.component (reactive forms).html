@@ -23,7 +23,7 @@
           <div *ngIf="email.errors.pattern">The email pattern is not correct</div>
         </div>
 
-
+      </div>
 
 
         <div class="form-group">
@@ -35,6 +35,28 @@
             <div *ngIf="address.errors.required" class="alert alert-danger">The address is required</div>
           </div>
         </div>
+
+        <div class="form-group">
+          <label for="">Shipping Address</label>
+          <textarea class="form-control" name="shippingAddress" placeholder="Shipping Address" cols="30" rows="10"
+            formControlName="shippingAddress"></textarea>
+
+          <div class="alert alert-danger" *ngIf="shippingAddress.touched && address.invalid">
+            <div *ngIf="shippingAddress.errors.required" class="alert alert-danger">The shipping address is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Contact Number</label>
+          <input type="text" placeholder="Contact Number" class="form-control" name="contactNo" formControlName="contactNo">
+
+          <div class="alert alert-danger" *ngIf="contactNo.touched && contactNo.invalid">
+            <div *ngIf="email.errors.required">The contact number is required</div>
+
+          </div>
+
+        </div>
+
       </div>
       <button type="submit" class="mx-auto mt-2 d-block btn btn-primary">Submit</button>
     </form>
