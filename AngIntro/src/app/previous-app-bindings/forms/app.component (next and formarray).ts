@@ -1,5 +1,5 @@
 // import { Component } from '@angular/core';
-// import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+// import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 // @Component({
@@ -13,35 +13,31 @@
 //   emailRegex = '[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$'
 //   contactRegex: string = "[789][0-9]{9}"
 
-//   constructor(fb: FormBuilder) {
-
-//     this.form = fb.group({
-//       fullName: ['', [
+//   constructor() {
+//     this.form = new FormGroup({
+//       fullName: new FormControl('', [
 //         Validators.required,
 //         Validators.minLength(5)
-//       ]], // this will represent a new instance of the form control class
-//       email: ['', [
+//       ]),
+//       email: new FormControl('', [
 //         Validators.required,
-//         Validators.email
-//       ]],
+//         Validators.pattern(this.emailRegex)
+//       ]),
 
-//       contactDetails: fb.group({
-//         address: ['',
-//           Validators.required,
-//         ],
-//         shippingAddress: ['',
-//           Validators.required,
-//         ],
-//         contactNo: ['',
+//       contactDetails: new FormGroup({
+//         address: new FormControl('', [
+//           Validators.required
+//         ]),
+//         shippingAddress: new FormControl('', [
+//           Validators.required
+//         ]),
+//         contactNo: new FormControl('', [
 //           Validators.required,
 //           Validators.pattern(this.contactRegex)
-//         ],
-
-
+//         ])
 //       }),
 
-//       skills: fb.array([])
-
+//       skills: new FormArray([])
 
 
 //     })

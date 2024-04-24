@@ -18,7 +18,6 @@
 
         <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
           <div *ngIf="email.errors.required">The email is required</div>
-          <div *ngIf="email.errors.email">The email pattern is not correct</div>
         </div>
 
       </div>
@@ -64,7 +63,7 @@
           <input type="text" class="form-control" (keyup.enter)="addSkills(skill)" #skill>
 
           <ul class="list-group">
-            <li class="list-group-item" *ngFor="let skill of skills?.controls; let i = index">
+            <li class="list-group-item" *ngFor="let skill of skills.controls; let i = index">
               {{skill.value}}
               <a (click)="removeSkills(i)" class="btn btn-sm btn-danger">X</a>
             </li>
